@@ -44,8 +44,8 @@ export default function Home() {
       <Navbar css={css} />
       <div className={`${css} flex-col gap-2 `}>
         <h2 className={`text-[#192060] text-center text-3xl font-extrabold ${bebas.className}`}>Why Choose SoulsType ?</h2>
-        <p className="text-gray-500">Everything You Need To Improve Your Typing ?</p>
-        <div className="grid grid-cols-4 gap-4 mt-3">
+        <p className="text-gray-500 max-[700px]:text-[16px]">Everything You Need To Improve Your Typing ?</p>
+        <div className="grid grid-cols-4 max-[700px]:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-12 gap-4 mt-3">
           {choose.map((item) => (
             <div className="bg-white dark:bg-[#161B22] py-3 px-4 rounded-md" key={item.id}>
               <h3 className={`text-[18px] font-bold flex items-center text-[#192060] ${bebas.className}`}>{item.icon} {item.title}</h3>

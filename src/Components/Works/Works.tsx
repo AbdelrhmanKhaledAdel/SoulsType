@@ -58,14 +58,14 @@ function Works({ css }: { css: string }) {
     return (
         <div className={`${css} flex-col gap-2 bg-white dark:bg-[#161B22] `}>
             <h2 className={`text-[#192060] text-center text-3xl font-extrabold ${bebas.className}`}>How It Works</h2>
-            <p className="text-gray-500">Start improving your typing skills in just a few simple steps.</p>
+            <p className="text-gray-500 text-center">Start improving your typing skills in just a few simple steps.</p>
             <div className="mt-3 flex flex-col gap-3 w-full">
                 {
                     works.map((item) => {
                         return (
                             <div className="w-full flex flex-col items-center " key={item.id}>
                                 <div className={`w-full max-w-150 text-center bg-[#192060] text-white py-1.5 px-2.5 flex items-center justify-between ${content === item.id ? "rounded-tr-md rounded-tl-md" : "rounded-md"}`}>
-                                    <h3 className="flex items-center">{item.icons} {item.title}</h3>
+                                    <h3 className="flex items-center max-[700px]:text-[16px]">{item.icons} {item.title}</h3>
                                     <div className="cursor-pointer">
                                         {
                                             content === item.id ? <div onClick={() => setContent(0)}>
