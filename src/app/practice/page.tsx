@@ -20,8 +20,8 @@ const Practice = () => {
     );
 
     const { state, words, timeLeft, typed, errors, totalTyped, restart } = useEngine({
-        TimeCount: currentLevel?.duration,
-        wordCount: currentLevel?.wordCount,
+        TimeCount: currentLevel?.duration ?? 60,
+        wordCount: currentLevel?.wordCount ?? 20,
     });
 
     const minutes = Math.floor(timeLeft / 60);
