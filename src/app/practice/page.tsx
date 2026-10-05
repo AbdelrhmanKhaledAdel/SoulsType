@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { RotateCw } from "lucide-react";
 import Results from "./_Components/Results";
@@ -7,10 +8,22 @@ import UserTyping from "./_Components/UserTyping";
 import Caret from "./_Components/Caret";
 import useEngine from "@/hooks/useEngine";
 import { calculateAccuracyPercentage } from "@/utils/calculateAccuracy";
+import { levels } from "../../data/levels"
 
 const Practice = () => {
+    const searchParams = useSearchParams();
+  const level = searchParams.get("practiceId");
     const css = "w-full flex px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 pt-12 pb-12";
-    const { state, words, timeLeft, typed, errors, totalTyped, restart } = useEngine();
+
+    const currentLevel = levels.find(
+        (item) => item.id === Number(level)
+    );
+
+    const { state, words, timeLeft, typed, errors, totalTyped, restart } = useEngine({
+        TimeCount: currentLevel?.duration,
+        wordCount: currentLevel?.wordCount,
+    });
+
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
     const wpm = Math.floor(((totalTyped - errors) / 5) / ((60 - timeLeft) / 60));

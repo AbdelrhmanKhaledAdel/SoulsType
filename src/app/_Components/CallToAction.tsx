@@ -14,7 +14,7 @@ const CallToAction = ({css}: {css: string}) => {
     <div className={`${css} flex-col gap-2`}>
         <h1 className={`text-3xl font-bold text-center text-[#192060] ${bebas.className}`}>Ready to Improve Your Typing Speed?</h1>
         <button className="bg-[#192060] mt-2.5 w-fit text-white py-2 px-4 rounded-md duration-300 cursor-pointer hover:bg-[#192060]/80">
-          <Link href="/practice">Start Practice</Link>
+          <Link href="/level">Start Practice</Link>
         </button>
     </div>
   )

@@ -16,6 +16,7 @@ const generateWords = (count: number) => {
 };
 
 const useWords = (count: number) => {
+    // const []
     const [words, setWords] = useState<string>(generateWords(count));
 
     const updateWords = useCallback(() => {
@@ -25,12 +26,11 @@ const useWords = (count: number) => {
     return { words, updateWords };
 }
 
-const useEngine = () => {
+const useEngine = ({ TimeCount, wordCount }: { TimeCount: number, wordCount: number }) => {
     const [state, setState] = useState<State>("start");
-    const { words, updateWords } = useWords(NUMBER_OF_WORDS);
-    const { timeLeft, startCountdown, resetCountdown } = useCountDwonTimer(COUNTDWON_SECONDS);
+    const { words, updateWords } = useWords(wordCount);
+    const { timeLeft, startCountdown, resetCountdown } = useCountDwonTimer(TimeCount);
     const { typed, cursor, clearTyped, resetTotalTyped, totalTyped } = useTyping(state !== "finish");
-    const [duration, setDuration] = useState(60);
 
     const [errors, setErrors] = useState(0);
 

@@ -1,5 +1,5 @@
 import { Bebas_Neue } from "next/font/google";
-import { Keyboard, User, Globe } from "lucide-react";
+import { Keyboard, User } from "lucide-react";
 import Link from "next/link";
 import ThemeButton from "@/Components/Header/_Components/ThemeButton";
 
@@ -19,12 +19,6 @@ function Header() {
         </div>
         <div className="flex items-center gap-2 text-white">
           <ThemeButton />
-          <div className="relative">
-            <button className="p-1.5 border border-white rounded-md cursor-pointer">
-              <Globe />
-            </button>
-            <div className="absolute w-[200px] "></div>
-          </div>
           <div className="flex gap-1">
             <User />
             <Link className="hover:underline duration-300" href="/login">Login</Link>

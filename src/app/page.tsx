@@ -1,9 +1,8 @@
 import { ChartColumnIncreasing, Moon, Trophy, Zap } from "lucide-react";
-import Navbar from "./_Components/Navbar";
+import Landing from "./_Components/Landing";
 import Works from "../Components/Works/Works";
 import CallToAction from "./_Components/CallToAction";
 import { Bebas_Neue } from "next/font/google";
-
 
 const bebas = Bebas_Neue({
   weight: "400",
@@ -37,14 +36,14 @@ export default function Home() {
       description: "Comfortable typing day and night.",
       icon: <Moon className="mr-1" />,
     },
-  ]
+  ];
 
   return (
     <main>
-      <Navbar css={css} />
+      <Landing css={css} />
       <div className={`${css} flex-col gap-2 `}>
         <h2 className={`text-[#192060] text-center text-3xl font-extrabold ${bebas.className}`}>Why Choose SoulsType ?</h2>
-        <p className="text-gray-500 max-[700px]:text-[16px]">Everything You Need To Improve Your Typing ?</p>
+        <p className="text-gray-500 max-[700px]:text-[16px] text-center">Everything You Need To Improve Your Typing ?</p>
         <div className="grid grid-cols-4 max-[700px]:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-12 gap-4 mt-3">
           {choose.map((item) => (
             <div className="bg-white dark:bg-[#161B22] py-3 px-4 rounded-md" key={item.id}>

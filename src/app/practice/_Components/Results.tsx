@@ -27,7 +27,7 @@ function Results({
             transition={{ duration: 0.6 }}
             className="relative"
         >
-            <div className="flex flex-col items-center mt-4 justify-center gap-8 w-full">
+            <div className="flex sm:flex-col md:flex-row items-center mt-4 justify-center gap-8 w-full">
                 <ProgressCircle color="red" progress={error} title="Errors" />
                 <ProgressCircle color="green" progress={accuracyPercentage} title="Accuracy" />
                 <ProgressCircle color="#192060" progress={total} title="Total" />
